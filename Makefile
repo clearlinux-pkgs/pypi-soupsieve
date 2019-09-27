@@ -1,5 +1,5 @@
 PKG_NAME := soupsieve
-URL = https://files.pythonhosted.org/packages/6b/77/b7801323fd321021d92efb11154b7b85410318b8a2e9757c410afb6d976f/soupsieve-1.9.3.tar.gz
+URL = https://files.pythonhosted.org/packages/7f/4e/95a13527e18b6f1a15c93f1c634b86d5fa634c5619dce695f4e0cd68182f/soupsieve-1.9.4.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
