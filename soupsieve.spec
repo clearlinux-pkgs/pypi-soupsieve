@@ -4,7 +4,7 @@
 #
 Name     : soupsieve
 Version  : 2.0
-Release  : 19
+Release  : 20
 URL      : https://files.pythonhosted.org/packages/15/53/3692c565aea19f7d9dd696fee3d0062782e9ad5bf9535267180511a15967/soupsieve-2.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/15/53/3692c565aea19f7d9dd696fee3d0062782e9ad5bf9535267180511a15967/soupsieve-2.0.tar.gz
 Summary  : A modern CSS selector implementation for Beautiful Soup.
@@ -50,6 +50,7 @@ python components for the soupsieve package.
 Summary: python3 components for the soupsieve package.
 Group: Default
 Requires: python3-core
+Provides: pypi(soupsieve)
 
 %description python3
 python3 components for the soupsieve package.
@@ -64,7 +65,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1582566489
+export SOURCE_DATE_EPOCH=1582920697
 # -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
@@ -79,6 +80,7 @@ export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/soupsieve
 cp %{_builddir}/soupsieve-2.0/LICENSE.md %{buildroot}/usr/share/package-licenses/soupsieve/bb9c4f272c1b7a041df0ca4dff99588d6ad958c8
+cp %{_builddir}/soupsieve-2.0/docs/src/markdown/about/license.md %{buildroot}/usr/share/package-licenses/soupsieve/aed22c356adf0d9eddf6a06b96e4672094334f1d
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -89,6 +91,7 @@ echo ----[ mark ]----
 
 %files license
 %defattr(0644,root,root,0755)
+/usr/share/package-licenses/soupsieve/aed22c356adf0d9eddf6a06b96e4672094334f1d
 /usr/share/package-licenses/soupsieve/bb9c4f272c1b7a041df0ca4dff99588d6ad958c8
 
 %files python
