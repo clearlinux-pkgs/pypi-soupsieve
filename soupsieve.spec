@@ -4,7 +4,7 @@
 #
 Name     : soupsieve
 Version  : 2.1
-Release  : 24
+Release  : 25
 URL      : https://files.pythonhosted.org/packages/58/5d/445e21e92345848305eecf473338e9ec7ed8905b99ea78415042060127fc/soupsieve-2.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/58/5d/445e21e92345848305eecf473338e9ec7ed8905b99ea78415042060127fc/soupsieve-2.1.tar.gz
 Summary  : A modern CSS selector implementation for Beautiful Soup.
