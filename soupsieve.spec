@@ -4,7 +4,7 @@
 #
 Name     : soupsieve
 Version  : 2.3.1
-Release  : 40
+Release  : 41
 URL      : https://files.pythonhosted.org/packages/e1/25/a3005eedafb34e1258458e8a4b94900a60a41a2b4e459e0e19631648a2a0/soupsieve-2.3.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/e1/25/a3005eedafb34e1258458e8a4b94900a60a41a2b4e459e0e19631648a2a0/soupsieve-2.3.1.tar.gz
 Summary  : A modern CSS selector implementation for Beautiful Soup.
@@ -14,13 +14,13 @@ Requires: soupsieve-license = %{version}-%{release}
 Requires: soupsieve-python = %{version}-%{release}
 Requires: soupsieve-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
-BuildRequires : pluggy
-BuildRequires : py-python
-BuildRequires : pytest
-BuildRequires : setuptools
-BuildRequires : tox
-BuildRequires : virtualenv
-BuildRequires : wheel
+BuildRequires : pypi(pluggy)
+BuildRequires : pypi(py)
+BuildRequires : pypi(pytest)
+BuildRequires : pypi(setuptools)
+BuildRequires : pypi(tox)
+BuildRequires : pypi(virtualenv)
+BuildRequires : pypi(wheel)
 
 %description
 [![Donate via PayPal][donate-image]][donate-link]
@@ -67,14 +67,14 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1636649485
+export SOURCE_DATE_EPOCH=1641429435
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
 export FFLAGS="$FFLAGS -fno-lto "
 export CXXFLAGS="$CXXFLAGS -fno-lto "
 export MAKEFLAGS=%{?_smp_mflags}
-python3 setup.py build
+python3 -m build --wheel --skip-dependency-check --no-isolation
 
 %install
 export MAKEFLAGS=%{?_smp_mflags}
@@ -82,7 +82,7 @@ rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/soupsieve
 cp %{_builddir}/soupsieve-2.3.1/LICENSE.md %{buildroot}/usr/share/package-licenses/soupsieve/8a335fd9d5231e4c69ee5c9ea790b5d72833970d
 cp %{_builddir}/soupsieve-2.3.1/docs/src/markdown/about/license.md %{buildroot}/usr/share/package-licenses/soupsieve/92e0ed1c5183910686b14c1fd37184cd086409e8
-python3 -tt setup.py build  install --root=%{buildroot}
+pip install --root=%{buildroot} --no-deps --ignore-installed dist/*.whl
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
