@@ -4,7 +4,7 @@
 #
 Name     : pypi-soupsieve
 Version  : 2.3.2.post1
-Release  : 46
+Release  : 47
 URL      : https://files.pythonhosted.org/packages/f3/03/bac179d539362319b4779a00764e95f7542f4920084163db6b0fd4742d38/soupsieve-2.3.2.post1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/f3/03/bac179d539362319b4779a00764e95f7542f4920084163db6b0fd4742d38/soupsieve-2.3.2.post1.tar.gz
 Summary  : A modern CSS selector implementation for Beautiful Soup.
